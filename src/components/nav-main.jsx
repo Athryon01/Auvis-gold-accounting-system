@@ -15,6 +15,7 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
 } from "@/components/ui/sidebar";
+import { Link } from "react-router";
 
 // کامپوننت بازگشتی برای رندر سطوح مختلف منو
 function RecursiveNavItem({ item, level = 0 }) {
@@ -92,10 +93,10 @@ function RecursiveNavItem({ item, level = 0 }) {
     <SidebarMenuSubItem key={item.title}>
       <SidebarMenuSubButton asChild>
       
-        <a href={item.url}>
+        <Link to={item.url}>
         {item?.icon}
           <span>{item.title}</span>
-        </a>
+        </Link>
       </SidebarMenuSubButton>
     </SidebarMenuSubItem>
   );

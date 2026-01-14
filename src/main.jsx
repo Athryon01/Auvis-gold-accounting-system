@@ -7,7 +7,7 @@ import "./global.css";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <ThemeProvider attribute="class" defaultTheme="dark">
+    <ThemeProvider attribute="class"  defaultTheme="dark">
       <Toaster position="top-right" theme="system" />
       <App />
     </ThemeProvider>

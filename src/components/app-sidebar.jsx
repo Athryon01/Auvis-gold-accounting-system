@@ -68,7 +68,7 @@ const data = {
           items:[
             {
               title: "Golds list",
-              url: "#",
+              url: "golds",
               icon:<LayoutList />
             },
             {
@@ -86,7 +86,7 @@ const data = {
           items:[
             {
               title: "Coins list",
-              url: "#",
+              url: "coins",
               icon:<LayoutList />
             },
             {
@@ -104,7 +104,7 @@ const data = {
           items:[
             {
               title: "Commodities list",
-              url: "#",
+              url: "commodities",
               icon:<LayoutList />
             },
             {
@@ -122,7 +122,7 @@ const data = {
           items:[
             {
               title: "Jewelries list",
-              url: "#",
+              url: "jewelries",
               icon:<LayoutList />
             },
             {
@@ -140,7 +140,7 @@ const data = {
           items:[
             {
               title: "Employees list",
-              url: "#",
+              url: "employees",
               icon:<LayoutList />
             },
             {
