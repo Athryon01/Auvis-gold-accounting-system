@@ -15,7 +15,7 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
-import { TabsDemo } from "./features/dashboard/components/TabsDemo";
+import { AppDrawer } from "./components/AppDrawer";
 
 function App() {
   return (
@@ -29,8 +29,10 @@ function App() {
            
         </header>
         <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
-        <Gateway />
-          <div className="bg-muted/50 min-h-[100vh] flex-1 rounded-xl md:min-h-min" />
+       
+          <div className="bg-muted/0 min-h-[100vh] flex-1 rounded-xl md:min-h-min" > <Gateway />
+       
+          </div>
         </div>
       </SidebarInset>
     </SidebarProvider>
