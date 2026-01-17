@@ -74,6 +74,7 @@ const data = {
             {
               title: "Add gold",
               url: "#",
+              function:{state:true},
              icon:<CirclePlus/>
             },
           ]
@@ -92,6 +93,7 @@ const data = {
             {
               title: "Add coin",
               url: "#",
+              function:{state:true},
              icon:<CirclePlus/>
             },
           ]
@@ -105,11 +107,13 @@ const data = {
             {
               title: "Commodities list",
               url: "commodities",
+              
               icon:<LayoutList />
             },
             {
               title: "Add commodity",
               url: "#",
+              function:{state:true},
              icon:<CirclePlus/>
             },
           ]
@@ -128,6 +132,7 @@ const data = {
             {
               title: "Add jewelry",
               url: "#",
+              function:{state:true},
              icon:<CirclePlus/>
             },
           ]
@@ -146,6 +151,7 @@ const data = {
             {
               title: "Add employee",
               url: "#",
+              function:{state:true},
              icon:<CirclePlus/>
             },
           ]

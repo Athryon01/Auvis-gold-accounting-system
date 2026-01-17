@@ -16,9 +16,11 @@ import {
   SidebarMenuSubItem,
 } from "@/components/ui/sidebar";
 import { Link } from "react-router";
+import useDrawer from "@/features/store/global/useDrawer";
 
 // کامپوننت بازگشتی برای رندر سطوح مختلف منو
 function RecursiveNavItem({ item, level = 0 }) {
+  let {openDrawer} = useDrawer()
   const hasChildren = item.items && item.items.length > 0;
   
   // اگر سطح اول باشد (آیتم اصلی)
@@ -91,7 +93,10 @@ function RecursiveNavItem({ item, level = 0 }) {
   // اگر ساب‌آیتم بدون فرزند باشد
   return (
     <SidebarMenuSubItem key={item.title}>
-      <SidebarMenuSubButton asChild>
+      <SidebarMenuSubButton asChild onClick={()=>{
+        item.function? openDrawer(item.function) : console.log("mm");
+        
+      }}>
       
         <Link to={item.url}>
         {item?.icon}

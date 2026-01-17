@@ -1,4 +1,5 @@
 import * as React from "react"
+import useDrawer from "@/features/store/global/useDrawer";
 import {
   closestCenter,
   DndContext,
@@ -91,7 +92,6 @@ function DragHandle({
     </Button>
   );
 }
-
 function DraggableRow({
   row,
   enableDragAndDrop,
@@ -121,6 +121,7 @@ function DraggableRow({
 }
 
 export function DataTable({
+  
   data: propData,
   columns: userColumns,
   enableDragAndDrop = false,
@@ -147,7 +148,10 @@ export function DataTable({
     pageIndex: 0,
     pageSize: defaultPageSize,
   })
-  
+  let {openDrawer} = useDrawer()
+  function open_drawer() {
+    openDrawer({state:true})
+  }
   React.useEffect(() => {
     setData(propData)
   }, [propData])
@@ -296,7 +300,7 @@ export function DataTable({
             </DropdownMenu>
           )}
           {onAddClick && (
-            <Button variant="outline" size="sm" onClick={onAddClick}>
+            <Button variant="outline" size="sm" onClick={()=>{open_drawer()}} >
               <IconPlus />
               <span className="hidden lg:inline">Add</span>
             </Button>

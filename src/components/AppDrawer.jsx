@@ -11,11 +11,13 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
+import useDrawer from "@/features/store/global/useDrawer"
 
 export function AppDrawer() {
+  let {isDrawerOpen,openDrawer} = useDrawer()
   return (
-    <Sheet>
-      <SheetTrigger  asChild>
+    <Sheet open={isDrawerOpen} onOpenChange={()=>{openDrawer({state:false})}} >
+      <SheetTrigger   asChild>
         <Button variant="outline">Open</Button>
       </SheetTrigger>
       <SheetContent>
