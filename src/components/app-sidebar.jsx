@@ -29,7 +29,17 @@ import {
   SidebarHeader,
   SidebarRail,
 } from "@/components/ui/sidebar";
+import { coinsFields, commoditiesFields, goldsFields, jewelriesFields } from "@/features/store/utils/Feilds";
+import useGolds from "@/features/store/global/useGolds";
+import useCoins from "@/features/store/global/useCoins";
+import useJewelries from "@/features/store/global/useJewelries";
+import useCommodities from "@/features/store/global/useCommodities";
 
+export function AppSidebar({ ...props }) {
+  const {golds,addGold} = useGolds()
+  let {addCoin}= useCoins()
+  let {addJewelry}= useJewelries()
+  let {addCommodity}= useCommodities()
 const data = {
   user: {
     name: "shadcn",
@@ -74,7 +84,7 @@ const data = {
             {
               title: "Add gold",
               url: "#",
-              function:{state:true},
+              function:{state:true,operator:useGolds().addGold,fields:goldsFields},
              icon:<CirclePlus/>
             },
           ]
@@ -93,7 +103,7 @@ const data = {
             {
               title: "Add coin",
               url: "#",
-              function:{state:true},
+              function:{state:true,operator:useCoins().addCoin,fields:coinsFields},
              icon:<CirclePlus/>
             },
           ]
@@ -113,7 +123,7 @@ const data = {
             {
               title: "Add commodity",
               url: "#",
-              function:{state:true},
+              function:{state:true,operator:useCommodities().addCommodity,fields:commoditiesFields},
              icon:<CirclePlus/>
             },
           ]
@@ -132,7 +142,7 @@ const data = {
             {
               title: "Add jewelry",
               url: "#",
-              function:{state:true},
+              function:{state:true,operator:useJewelries().addJewelry,fields:jewelriesFields},
              icon:<CirclePlus/>
             },
           ]
@@ -251,7 +261,6 @@ const data = {
   ],
 };
 
-export function AppSidebar({ ...props }) {
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>

@@ -1,8 +1,9 @@
+import FieldGenerator from '@/features/shared/components/FieldGenerator'
 import React from 'react'
 
 function Employees() {
   return (
-    <div>Employees</div>
+    <FieldGenerator/>
   )
 }
 

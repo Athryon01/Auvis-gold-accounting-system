@@ -148,9 +148,14 @@ export function DataTable({
     pageIndex: 0,
     pageSize: defaultPageSize,
   })
-  let {openDrawer} = useDrawer()
+  let {openDrawer,isDrawerOpen} = useDrawer()
   function open_drawer() {
+    console.log(isDrawerOpen);
+    
     openDrawer({state:true})
+   
+    console.log(isDrawerOpen);
+    
   }
   React.useEffect(() => {
     setData(propData)
