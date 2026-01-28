@@ -9,9 +9,9 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
-import { NavPlatform } from "../components/NavPlatform";
-import { NavSecondary } from "../components/NavSecondary";
-import { NavUser } from "../components/NavUser";
+import { NavPlatform } from "../../layout/components/NavPlatform";
+import { NavSecondary } from "../../layout/components/NavSecondary";
+import { NavUser } from "../../layout/components/NavUser";
 
 export function NavSidebar({ ...props }) {
   return (
@@ -28,8 +28,8 @@ export function NavSidebar({ ...props }) {
                   <Command className="size-4" />
                 </div>
                 <div className="grid flex-1 text-left text-sm leading-tight">
-                  <span className="truncate font-medium">Acme Inc</span>
-                  <span className="truncate text-xs">Enterprise</span>
+                  <span className="truncate font-medium">Auvis</span>
+                  <span className="truncate text-xs">Personal</span>
                 </div>
               </a>
             </SidebarMenuButton>

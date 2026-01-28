@@ -1,4 +1,3 @@
-import { SidebarIcon } from "lucide-react";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -10,10 +9,17 @@ import {
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { useSidebar } from "@/components/ui/sidebar";
-import { SearchForm } from "../components/SearchForm";
+import platform from "@/data/platform";
+import { SidebarIcon } from "lucide-react";
+import { useLocation } from "react-router";
+import { SearchForm } from "../../layout/components/SearchForm";
 
 export function SiteHeader() {
   const { toggleSidebar } = useSidebar();
+  const location = useLocation();
+  const currentItem = platform.find((item) => item.route === location.pathname);
+  const groupLabel = currentItem?.group || "Platform";
+  const pageLabel = currentItem?.name || "Dashboard";
 
   return (
     <header className="bg-background sticky top-0 z-50 flex w-full items-center border-b">
@@ -30,13 +36,11 @@ export function SiteHeader() {
         <Breadcrumb className="hidden sm:block">
           <BreadcrumbList>
             <BreadcrumbItem>
-              <BreadcrumbLink href="#">
-                Building Your Application
-              </BreadcrumbLink>
+              <BreadcrumbLink href="#">{groupLabel}</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbPage>Data Fetching</BreadcrumbPage>
+              <BreadcrumbPage>{pageLabel}</BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>

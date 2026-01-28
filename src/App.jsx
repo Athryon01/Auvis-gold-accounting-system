@@ -1,8 +1,8 @@
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 import { BrowserRouter } from "react-router";
 import Gateway from "./features/router/Gateway";
-import { SiteHeader } from "./features/shared/pages/NavHeader";
-import { NavSidebar } from "./features/shared/pages/NavSidebar";
+import { SiteHeader } from "./features/layout/pages/NavHeader";
+import { NavSidebar } from "./features/layout/pages/NavSidebar";
 
 function App() {
   return (
@@ -13,19 +13,13 @@ function App() {
           <div className="flex flex-1">
             <NavSidebar />
             <SidebarInset>
-              <div className="flex flex-1 flex-col gap-4 p-4">
-                <div className="grid auto-rows-min gap-4 md:grid-cols-3">
-                  <div className="bg-muted/50 aspect-video rounded-xl" />
-                  <div className="bg-muted/50 aspect-video rounded-xl" />
-                  <div className="bg-muted/50 aspect-video rounded-xl" />
-                </div>
-                <div className="bg-muted/50 min-h-[100vh] flex-1 rounded-xl md:min-h-min" />
+              <div>
+                <Gateway />
               </div>
             </SidebarInset>
           </div>
         </SidebarProvider>
       </div>
-      <Gateway />
     </BrowserRouter>
   );
 }
