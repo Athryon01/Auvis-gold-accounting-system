@@ -1,0 +1,7 @@
+const user = {
+  name: "shadcn",
+  email: "m@example.com",
+  avatar: "/avatars/shadcn.jpg",
+};
+
+export default user;
