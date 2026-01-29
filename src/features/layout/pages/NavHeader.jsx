@@ -12,7 +12,6 @@ import { useSidebar } from "@/components/ui/sidebar";
 import platform from "@/data/platform";
 import { SidebarIcon } from "lucide-react";
 import { useLocation } from "react-router";
-import { SearchForm } from "../../layout/components/SearchForm";
 
 export function SiteHeader() {
   const { toggleSidebar } = useSidebar();
@@ -36,7 +35,7 @@ export function SiteHeader() {
         <Breadcrumb className="hidden sm:block">
           <BreadcrumbList>
             <BreadcrumbItem>
-              <BreadcrumbLink href="#">{groupLabel}</BreadcrumbLink>
+              <BreadcrumbPage>{groupLabel}</BreadcrumbPage>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
@@ -44,7 +43,6 @@ export function SiteHeader() {
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
-        <SearchForm className="w-full sm:ml-auto sm:w-auto" />
       </div>
     </header>
   );
